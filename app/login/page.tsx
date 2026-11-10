@@ -29,7 +29,6 @@ export default function LoginPage() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
   const [remember, setRemember] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -119,7 +118,6 @@ export default function LoginPage() {
         )}
 
         <div className="space-y-3">
-
           {/* Username */}
           <label
             className={fieldClass}
@@ -148,7 +146,7 @@ export default function LoginPage() {
             />
           </label>
 
-          {/* Password with Eye Icon */}
+          {/* Password - No Eye Icon */}
           <label
             className={fieldClass}
             style={{ backgroundColor: LIGHT_PINK }}
@@ -171,7 +169,7 @@ export default function LoginPage() {
 
             <input
               id="password"
-              type={showPassword ? "text" : "password"}
+              type="password"
               placeholder="Password"
               autoComplete="current-password"
               className={inputClass}
@@ -179,57 +177,6 @@ export default function LoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-
-            {/* Eye / EyeOff Toggle Button */}
-            <button
-              type="button"
-              onClick={() =>
-                setShowPassword((prev) => !prev)
-              }
-              className="shrink-0 flex items-center justify-center text-[#965D5D] transition-opacity hover:opacity-70"
-              aria-label={
-                showPassword ? "Hide password" : "Show password"
-              }
-              title={
-                showPassword ? "Hide password" : "Show password"
-              }
-            >
-              {showPassword ? (
-                /* Eye Off Icon */
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M3 3l18 18" />
-                  <path d="M10.58 10.59a2 2 0 0 0 2.83 2.83" />
-                  <path d="M9.88 5.09A10.8 10.8 0 0 1 12 4.87c5 0 8.27 4.11 9.5 7.13a1 1 0 0 1 0 .73 11.8 11.8 0 0 1-4.1 5.08" />
-                  <path d="M6.61 6.61A12.5 12.5 0 0 0 2.5 12a1 1 0 0 0 0 .73C3.73 15.75 7 19.87 12 19.87c1.2 0 2.3-.25 3.3-.7" />
-                </svg>
-              ) : (
-                /* Eye Icon */
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M2.5 12s3.5-7 9.5-7 9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7z" />
-                  <circle cx="12" cy="12" r="3" />
-                </svg>
-              )}
-            </button>
           </label>
         </div>
 
