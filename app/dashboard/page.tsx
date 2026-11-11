@@ -100,7 +100,7 @@ export default function DashboardPage() {
             Welcome back! <span className="dash-wave">👋</span>
           </h2>
           <p className="mt-2 max-w-md text-sm text-white/90">
-            You are authenticated. Your active JWT session is stored in LocalStorage.
+            Drive your journey with ease. Find, book, and enjoy the perfect vehicle for your travel needs.
           </p>
         </section>
 
